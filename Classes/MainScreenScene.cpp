@@ -12,7 +12,7 @@ Scene* MainScreen::createScene()
 
 bool MainScreen::init()
 {
-    if ( !Scene::init() )
+    if (!Scene::init())
     {
         return false;
     }
@@ -21,13 +21,13 @@ bool MainScreen::init()
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
     auto background = Sprite::create("background.jpg");
-    background->setScale(visibleSize.width/background->getContentSize().width, visibleSize.height/ background->getContentSize().height);
+    background->setScale(visibleSize.width / background->getContentSize().width, visibleSize.height / background->getContentSize().height);
     background->setAnchorPoint(Vec2(0, 0));
     background->setPosition(Point(0, 0));
     this->addChild(background);
 
     auto labelTitle = Label::createWithTTF("Go With The Flow", "fonts/CherryBombOne-Regular.ttf", 80);
-    labelTitle->setPosition(Point(visibleSize.width / 2, 2*visibleSize.height / 3));
+    labelTitle->setPosition(Point(visibleSize.width / 2, 2 * visibleSize.height / 3));
     labelTitle->setColor(Color3B(255, 163, 181));
     this->addChild(labelTitle);
 
@@ -36,9 +36,9 @@ bool MainScreen::init()
     playButton->setFontName("fonts/CherryBombOne-Regular.ttf");
 
     auto menu = Menu::create(playButton, NULL);
-    menu->setPosition(Point(0,0));
+    menu->setPosition(Point(0, 0));
     this->addChild(menu);
-    
+
 
     return true;
 }
@@ -51,6 +51,6 @@ void MainScreen::menuCloseCallback(Ref* pSender)
 
 void MainScreen::playGame(Ref* pSender)
 {
-    auto scene = PlayGame::createScene();
+    auto scene = PlayGame::createScene(0);
     Director::getInstance()->replaceScene(scene);
 }
