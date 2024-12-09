@@ -10,13 +10,13 @@ public:
     static cocos2d::Scene* createScene();
 
     virtual bool init();
-
+    
     void menuCloseCallback(cocos2d::Ref* pSender);
 
     void playGame(cocos2d::Ref* pSender);
 
     cocos2d::Sprite mySprite;
-
+    
     CREATE_FUNC(MainScreen);
 };
 

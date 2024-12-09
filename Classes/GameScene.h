@@ -2,6 +2,7 @@
 #define __PLAYGAME_SCENE_H__
 
 #include "cocos2d.h"
+//#include "Obstacles.h"
 
 class PlayGame : public cocos2d::Scene
 {
